@@ -1,0 +1,32 @@
+<div class="nav-container">
+  <div class="nav-scrollable">
+    <h2 class="nav-master-item">PROJECTS</h2>
+    <div *ngFor="let project of projects" class="nav-project nav-project-closed-state"
+         [class.nav-project-closed-state]="!(project.projectId === selectedProject.projectId)"
+         [class.nav-project-open-state]="project.projectId === selectedProject.projectId">
+      <h3 class="nav-project-title">
+        <a [routerLink]="!(project.projectId === selectedProject.projectId) ? ['/' + project.projectId + '/overview'] : []"
+           [class.nav-disabled-link]="(project.projectId === selectedProject.projectId)"
+           class="nav-project-title-link">{{project.name}}</a>
+      </h3>
+      <div class="nav-project-expansion"
+         [class.nav-project-expansion-closed-state]="!(project.projectId === selectedProject.projectId)"
+         [class.nav-project-expansion-open-state]="project.projectId === selectedProject.projectId">
+        <ul>
+          <li><a [routerLink]="['/' + project.projectId + '/overview']" routerLinkActive="nav-project-item-active" class="nav-project-item-link">Overview</a></li>
+          <li><a [routerLink]="['/' + project.projectId + '/epics']" routerLinkActive="nav-project-item-active" class="nav-project-item-link">Epics</a></li>
+          <li><a [routerLink]="['/' + project.projectId + '/issues']" routerLinkActive="nav-project-item-active" class="nav-project-item-link">Issues</a></li>
+          <li><a [routerLink]="['/' + project.projectId + '/board']" routerLinkActive="nav-project-item-active" class="nav-project-item-link">Board</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav-no-projects" *ngIf="projects == null || projects.length < 1">
+      <p>No projects to display yet.</p>
+    </div>
+    <div class="nav-divider"></div>
+  </div>
+  <div class="nav-filler"></div>
+  <div class="nav-bottom">
+    <app-nav-button materialIcon="add" text="Create Project" (click)="createProject()"></app-nav-button>
+  </div>
+</div>

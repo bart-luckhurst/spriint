@@ -1,0 +1,8 @@
+{
+  "env": {
+    "name": "PROD"
+  },
+  "api": {
+    "baseUrl": "https://spriint.azurewebsites.net/api"
+  }
+}

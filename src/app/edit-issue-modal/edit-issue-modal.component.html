@@ -1,0 +1,82 @@
+<div *ngIf="modalVisible" class="modal-container">
+  <div class="modal-left" (click)="cancelModal()">
+
+  </div>
+  <div class="modal-right">
+    <div class="modal-right-header">
+      <h2 class="modal-right-header">Edit {{issue.name}}</h2>
+    </div>
+    <div class="modal-right-content">
+      <div class="modal-form-row">
+        <div class="modal-form-label">
+          Type*
+        </div>
+        <div class="modal-type-selector">
+          <div class="modal-type" [class.selected-modal-type]="issueType === 'Story'" (click)="selectType('Story')">
+            <div class="modal-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                <title>Story</title>
+                <g>
+                  <path d="M324.48,114.4ZM360,120V340a111.86,111.86,0,0,0-35.52-5.6C278.4,334.4,240,360,240,360s-38.4-25.6-84.48-25.6A111.86,111.86,0,0,0,120,340V120a111.86,111.86,0,0,1,35.52-5.6C201.6,114.4,240,140,240,140s38.4-25.6,84.48-25.6h0v20c-38.75,0-72.4,21.6-73.41,22.26-.35.23-.71.45-1.07.66V331.94c17.55-8.1,44.43-17.54,74.47-17.54h0a139.71,139.71,0,0,1,15.52.86V135.63a96.38,96.38,0,0,0-15.52-1.23h0v-20A111.86,111.86,0,0,1,360,120ZM155.52,314.4c30,0,56.92,9.44,74.48,17.54V157.32c-.36-.21-.72-.43-1.07-.66-1-.67-34.67-22.26-73.41-22.26A96.47,96.47,0,0,0,140,135.63V315.26A139.71,139.71,0,0,1,155.52,314.4Z" />
+                </g>
+              </svg>
+            </div>
+            <div class="modal-type-label">
+              Story
+            </div>
+          </div>
+          <div class="modal-type-filler">
+
+          </div>
+          <div class="modal-type" [class.selected-modal-type]="issueType === 'Bug'" (click)="selectType('Bug')">
+            <div class="modal-type-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+                <title>Bug</title>
+                <g>
+                  <path d="M320,270h30a10,10,0,0,0,0-20H320V236.28c0-2.12-.1-4.21-.27-6.28H350a10,10,0,0,0,0-20H315.33a76.54,76.54,0,0,0-15.52-25.41c.11-1.51.19-3,.19-4.59a60,60,0,0,0-120,0c0,1.55.08,3.08.19,4.59A76.54,76.54,0,0,0,164.67,210H130a10,10,0,0,0,0,20h30.27c-.17,2.07-.27,4.16-.27,6.28V250H130a10,10,0,0,0,0,20h30v13.72c0,2.12.11,4.21.28,6.28H130a10,10,0,0,0,0,20h34.65a76.3,76.3,0,0,0,71.63,50h7.44a76.3,76.3,0,0,0,71.63-50H350a10,10,0,0,0,0-20H319.72c.17-2.07.28-4.16.28-6.28Zm-76.28,68.92h-7.44a55.26,55.26,0,0,1-55.2-55.2V236.28a55,55,0,0,1,14.61-37.4l6.22-6.74-.7-9.14c-.09-1.19-.13-2.14-.13-3a38.92,38.92,0,0,1,77.84,0c0,.86,0,1.81-.13,3l-.7,9.14,6.22,6.74a55,55,0,0,1,14.61,37.4v47.44A55.26,55.26,0,0,1,243.72,338.92Z" />
+                </g>
+              </svg>
+            </div>
+            <div class="modal-type-label">
+              Bug
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-form-row">
+        <div class="modal-form-label">
+          Name*
+        </div>
+        <div class="modal-form-item">
+          <input type="text" [(ngModel)]="name" />
+        </div>
+      </div>
+      <div class="modal-form-row">
+        <div class="modal-form-label">
+          Epic*
+        </div>
+        <div class="modal-form-item">
+          <select (change)="setEpic($event.target.value)">
+            <option value="null">None</option>
+            <option *ngFor="let epic of epics" [value]="epic.epicId" [selected]="epic.epicId == selectedEpicId">
+              {{epic.name}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-form-row">
+        <div class="modal-form-label">
+          Description
+        </div>
+        <div class="modal-form-item">
+          <textarea [(ngModel)]="description"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-right-footer">
+      <div class="modal-right-footer-filler"></div>
+      <button class="secondary" (click)="cancelModal()">Cancel</button>
+      <button class="primary" (click)="saveIssue()">Save</button>
+    </div>
+  </div>
+</div>

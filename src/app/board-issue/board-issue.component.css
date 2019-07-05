@@ -1,0 +1,36 @@
+div.board-issue {
+  width: calc(100% - 24px);
+  height: 120px;
+  margin: 12px;
+  padding: 0px;
+  color: var(--white-color);
+  border-radius: 4px;
+  cursor: grab;
+  user-select: none;
+  overflow: hidden;
+}
+
+div.board-issue-story {
+  background-color: var(--feature-color1);
+}
+
+div.board-issue-bug {
+  background-color: var(--feature-color2);
+}
+
+div.board-issue-title {
+  width: calc(100% - 24px);
+  height: 48px;
+  padding: 12px 12px 0px 12px;
+  line-height: 24px;
+}
+
+div.board-issue-type {
+  width: 60px;
+  height: 60px;
+  margin-left: calc(100% - 60px);
+}
+
+  div.board-issue-type path {
+    fill: var(--white-color);
+  }

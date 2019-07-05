@@ -1,0 +1,52 @@
+<div class="page-header">
+  <div class="page-header-left">
+    <h1 class="page-header">{{project.name}}</h1>
+    <h2 class="page-sub-header">Board</h2>
+  </div>
+  <div class="page-header-right">
+  </div>
+</div>
+<div class="page-content">
+  <div class="board-container">
+    <div class="board-column"
+         appDroppable
+         [class.board-column-disable-child-events]="issueOverDropTarget"
+         id="ToDo">
+      <div class="board-column-header">
+        To Do
+      </div>
+      <app-board-issue *ngFor="let issue of toDoIssues" [issue]="issue"></app-board-issue>
+    </div>
+    <div class="board-filler"></div>
+    <div class="board-column"
+         appDroppable
+         [class.board-column-disable-child-events]="issueOverDropTarget"
+         id="InProgress">
+      <div class="board-column-header">
+        In Progress
+      </div>
+      <app-board-issue *ngFor="let issue of inProgressIssues" [issue]="issue"></app-board-issue>
+    </div>
+    <div class="board-filler"></div>
+    <div class="board-column"
+         appDroppable
+         [class.board-column-disable-child-events]="issueOverDropTarget"
+         id="InTest">
+      <div class="board-column-header">
+        In Test
+      </div>
+      <app-board-issue *ngFor="let issue of inTestIssues" [issue]="issue"></app-board-issue>
+    </div>
+    <div class="board-filler"></div>
+    <div class="board-column"
+         appDroppable
+         [class.board-column-disable-child-events]="issueOverDropTarget"
+         id="Complete">
+      <div class="board-column-header">
+        Complete
+      </div>
+      <app-board-issue *ngFor="let issue of completeIssues" [issue]="issue"></app-board-issue>
+    </div>
+  </div>
+</div>
+

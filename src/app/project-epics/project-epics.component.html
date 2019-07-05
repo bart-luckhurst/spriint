@@ -1,0 +1,28 @@
+<div class="page-header">
+  <div class="page-header-left">
+    <h1 class="page-header">{{project.name}}</h1>
+    <h2 class="page-sub-header">Epics</h2>
+  </div>
+  <div class="page-header-right">
+    <button class="page-header-button" (click)="createEpic()">
+      <i class="material-icons">add</i>
+    </button>
+  </div>
+</div>
+<div class="page-content">
+  <div class="list-container">
+    <div class="list-row" *ngFor="let epic of epics">
+      <div class="list-row-name">
+        {{epic.name}}
+      </div>
+      <div class="list-row-description">
+        {{epic.description}}
+      </div>
+      <div class="list-row-buttons">
+        <button class="primary" (click)="editEpic(epic)">Edit</button>
+        <button class="primary" (click)="deleteEpic(epic)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,107 @@
+div.overview-container {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 48px);
+  height: calc(100% - 120px);
+  margin: 23px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+div.overview-left {
+  width: 240px;
+  height: 100%;
+  background-color: var(--faded-background-color);
+}
+
+div.overview-right {
+  flex-grow: 1;
+  height: 100%;
+}
+
+div.overview-item {
+  margin: 24px 24px 0px 24px;
+}
+
+div.overview-item-label {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--ultra-faded-foreground-color);
+  user-select: none;
+  cursor: default;
+}
+
+div.overview-item-description {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+  color: var(--foreground-color);
+}
+
+div.overview-item-value {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+  color: var(--foreground-color);
+}
+
+div.visualization-canvas {
+  width: calc(100% - 96px);
+  height: calc(100% - 96px);
+  margin: 47px 47px 47px 48px;
+  background-color: var(--background-color);
+}
+
+circle.issue-count {
+  fill: var(--accent-color);
+  opacity: 0.8;
+}
+
+circle.epic-underlay {
+  fill: var(--background-color);
+}
+
+circle.epic-count {
+  fill: var(--accent-color);
+}
+
+text.issue-count-value {
+  fill: var(--white-color);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+text.issue-count-label {
+  fill: var(--white-color);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 7pt;
+  line-height: 7pt;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+text.epic-count-value {
+  fill: var(--white-color);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 80px;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+text.epic-count-label {
+  fill: var(--white-color);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-anchor: middle;
+  pointer-events: none;
+}

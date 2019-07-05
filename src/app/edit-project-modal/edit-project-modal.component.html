@@ -1,0 +1,33 @@
+<div *ngIf="modalVisible" class="modal-container">
+  <div class="modal-left" (click)="cancelModal()">
+
+  </div>
+  <div class="modal-right">
+    <div class="modal-right-header">
+      <h2 class="modal-right-header">Edit {{project.name}}</h2>
+    </div>
+    <div class="modal-right-content">
+      <div class="modal-form-row">
+        <div class="modal-form-label">
+          Name*
+        </div>
+        <div class="modal-form-item">
+          <input type="text" [(ngModel)]="name" />
+        </div>
+      </div>
+      <div class="modal-form-row">
+        <div class="modal-form-label">
+          Description
+        </div>
+        <div class="modal-form-item">
+          <textarea [(ngModel)]="description"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="modal-right-footer">
+      <div class="modal-right-footer-filler"></div>
+      <button class="secondary" (click)="cancelModal()">Cancel</button>
+      <button class="primary" (click)="saveProject()">Save</button>
+    </div>
+  </div>
+</div>

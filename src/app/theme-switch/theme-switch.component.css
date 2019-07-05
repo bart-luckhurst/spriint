@@ -1,0 +1,64 @@
+div.theme-switch-toggle {
+  width: 96px;
+  height: 24px;
+  display: flex;
+}
+
+div.light-theme-button, div.dark-theme-button {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+  div.light-theme-button:hover path, div.dark-theme-button:hover path {
+    opacity: 1;
+  }
+
+path.icon {
+  fill: var(--foreground-color);
+  transition: opacity linear 0.06s;
+}
+
+div.toggle {
+  width: 44px;
+  height: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+div.toggle svg {
+  width: 48px;
+  height: 24px;
+  margin: -2px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+circle.circle {
+  fill: var(--accent-color);
+  transition: transform linear 0.06s;
+}
+
+.sun-light-state {
+  opacity: 1;
+}
+
+.circle-light-state {
+  transform: translate(0px, 0px);
+}
+
+.moon-light-state {
+  opacity: 0.5;
+}
+
+.sun-dark-state {
+  opacity: 0.5;
+}
+
+.circle-dark-state {
+  transform: translate(24px, 0px);
+}
+
+.moon-dark-state {
+  opacity: 1;
+}

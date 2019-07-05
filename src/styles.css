@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+:root {
+  --accent-color: #5e53b0;
+  --faded-accent-color: rgba(94, 83, 176, 0.10);
+  --hover-accent-color: #6e64b8;
+  --feature-color1: #00c9dd;
+  --feature-color2: #eb00db;
+  --background-color: #fbfbfb;
+  --faded-background-color: #f0f0f0;
+  --foreground-color: #121212;
+  --faded-foreground-color: #484848;
+  --ultra-faded-foreground-color: #b0b0b0;
+  --border-color: #e0e0e0;
+  --white-color: #ffffff;
+  --black-color: #121212;
+  --warning-color: #c41728;
+}
+
+div.page-header {
+  width: calc(100% - 48px);
+  height: 71px;
+  margin: 0px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: row;
+}
+
+div.page-header-left {
+  height: 71px;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+div.page-header-right {
+  min-width: 48px;
+  height: 48px;
+  line-height: 48px;
+}
+
+h1.page-header {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--faded-foreground-color);
+  user-select: none;
+  cursor: default;
+  line-height: 48px;
+}
+
+h2.page-sub-header {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ultra-faded-foreground-color);
+  user-select: none;
+  cursor: default;
+  line-height: 24px;
+}
+
+button.page-header-button {
+  margin: 2px;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--faded-foreground-color);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 24px;
+}
+
+  button.page-header-button:hover {
+    color: var(--foreground-color);
+    border: 1px solid var(--border-color);
+  }
+
+div.page-content {
+  width: 100%;
+  height: calc(100% - 72px);
+  overflow: auto;
+}
+
+button.primary, button.secondary {
+  height: 36px;
+  line-height: 36px;
+  padding: 0px 12px;
+  margin: 6px 12px 6px 0px;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: var(--accent-color);
+  border: 0px none transparent;
+  color: var(--white-color);
+}
+
+button.primary:hover {
+  background-color: var(--hover-accent-color);
+}
+
+button.secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--foreground-color);
+  cursor: pointer;
+}
+
+  button.secondary:hover {
+    background-color: var(--faded-background-color);
+  }
+
+button.primary:disabled, button.secondary:disabled {
+  cursor: not-allowed;
+  color: var(--ultra-faded-foreground-color);
+  background-color: var(--border-color) !important;
+}
+
+div.modal-container {
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  z-index: 20;
+}
+
+div.modal-left {
+  background-color: var(--foreground-color);
+  opacity: 0.1;
+  flex-grow: 1;
+}
+
+div.modal-right {
+  background-color: var(--background-color);
+  width: 479px;
+  height: 100%;
+  box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.1);
+}
+
+div.modal-right-header {
+  width: calc(100% - 24px);
+  height: 48px;
+  line-height: 48px;
+  padding: 0px 12px 0px 12px;
+  background-color: var(--accent-color);
+}
+
+h2.modal-right-header {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--white-color);
+  user-select: none;
+  cursor: default;
+  line-height: 48px;
+}
+
+div.modal-right-content {
+  width: 100%;
+  height: calc(100vh - 102px);
+  overflow: hidden;
+}
+
+div.modal-right-footer {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  margin: 0px 0px 6px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+div.modal-right-footer-filler {
+  flex-grow: 1;
+}
+
+div.modal-form-row {
+  margin: 24px 24px 0px 24px;
+  width: calc(100% - 48px);
+}
+
+div.modal-form-label {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--ultra-faded-foreground-color);
+  user-select: none;
+  cursor: default;
+}
+
+div.modal-form-item {
+  width: 100%;
+  margin: 4px 0px 0px 0px;
+}
+
+  div.modal-form-item input[type=text] {
+    width: calc(100% - 10px);
+    padding: 0px 4px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--foreground-color);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Quicksand", sans-serif;
+  }
+
+  div.modal-form-item textarea {
+    width: calc(100% - 10px);
+    padding: 0px 4px;
+    height: 94px;
+    line-height: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--foreground-color);
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Quicksand", sans-serif;
+  }
+
+div.modal-confirmation {
+  width: calc(100% - 72px);
+  border: 1px solid var(--warning-color);
+  margin: 24px;
+  padding: 11px;
+  color: var(--warning-color);
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+}
+
+div.modal-type-selector {
+  margin: 4px 0px 0px 0px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+}
+
+div.modal-type {
+  flex-grow: 1;
+  height: 118px;
+  border: 1px solid var(--border-color);
+  padding: 0px 11px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--foreground-color);
+}
+
+  div.modal-type path {
+    fill: var(--border-color);
+  }
+
+div.modal-type:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+  div.modal-type:hover path {
+    fill: var(--accent-color) !important;
+  }
+
+div.modal-type-icon {
+  height: 83px;
+  overflow: hidden;
+}
+
+  div.modal-type-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+div.modal-type-label {
+  border-top: 1px solid var(--border-color);
+  height: 35px;
+  line-height: 36px;
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  font-weight: 400;
+}
+
+div.selected-modal-type {
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+}
+
+  div.selected-modal-type path {
+    fill: var(--accent-color) !important;
+  }
+
+div.modal-type-filler {
+  width: 24px;
+  height: 120px;
+  flex-grow: 0;
+}
+
+div.list-container {
+  width: calc(100% - 48px);
+  margin: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--faded-background-color);
+}
+
+div.list-row {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  color: var(--foreground-color);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+
+div.list-row-icon {
+  width: 48px;
+  height:48px;
+  line-height: 48px;
+}
+
+  div.list-row-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  div.list-row-icon svg path {
+    fill: var(--ultra-faded-foreground-color);
+  }
+
+div.list-row-name {
+  padding: 0px 12px 0px 12px;
+  width: 240px;
+  text-overflow: ellipsis;
+  color: var(--foreground-color);
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+}
+
+div.list-row-description {
+  padding: 0px 12px 0px 12px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-overflow: ellipsis;
+  color: var(--ultra-faded-foreground-color);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Quicksand", sans-serif;
+}
+

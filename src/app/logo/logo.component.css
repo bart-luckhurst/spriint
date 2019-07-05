@@ -1,0 +1,57 @@
+@keyframes motion-animation {
+  from {
+    opacity: 0;
+    transform: translate(-12px, 0px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+a.logo:link, a.logo:visited {
+  text-decoration: none;
+  color: var(--foreground-color);
+}
+
+a.logo:hover .motion-line {
+  animation-name: motion-animation;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1;
+}
+
+line#middle-line {
+  animation-delay: 0.05s;
+}
+
+line#bottom-line {
+  animation-delay: 0.1s;
+}
+
+svg.logo-motion {
+  width: 12px;
+  height: 24px;
+  margin: 0px;
+  padding: 0px;
+  vertical-align: top;
+}
+
+.motion-line {
+  fill: none;
+  stroke: var(--accent-color);
+  stroke-linecap: round;
+  stroke-miterlimit: 20;
+}
+
+
+
+
+span.logo-text {
+  margin: 0px;
+  padding: 0px;
+  line-height: 24px;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}

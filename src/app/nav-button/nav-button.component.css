@@ -1,0 +1,30 @@
+div.nav-button {
+  width: calc(100% - 24px);
+  height: 24px;
+  line-height: 24px;
+  padding: 12px;
+  margin: 0px;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Quicksand', sans-serif;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+div.nav-button:hover {
+  background-color: var(--hover-accent-color);
+}
+
+  div.nav-button i {
+    vertical-align: top;
+  }
+
+  div.nav-button span {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    margin: 0px 0px 0px 12px;
+  }

@@ -1,0 +1,53 @@
+<div class="page-header">
+  <div class="page-header-left">
+    <h1 class="page-header">{{project.name}}</h1>
+    <h2 class="page-sub-header">Overview</h2>
+  </div>
+  <div class="page-header-right">
+    <button class="page-header-button" (click)="editProject()">
+      <i class="material-icons">edit</i>
+    </button>
+    <button class="page-header-button" (click)="deleteProject()">
+      <i class="material-icons">delete</i>
+    </button>
+  </div>
+  
+</div>
+<div class="overview-container">
+  <div class="overview-left">
+    <div class="overview-item">
+      <div class="overview-item-label">Description</div>
+      <div class="overview-item-description">{{project.description}}</div>
+    </div>
+    <div class="overview-item">
+      <div class="overview-item-label">Project ID</div>
+      <div class="overview-item-value">{{project.projectId}}</div>
+    </div>
+    <div class="overview-item">
+      <div class="overview-item-label">Created</div>
+      <div class="overview-item-value">{{formatDateTime(project.dateTimeCreated)}}</div>
+    </div>
+  </div>
+  <div class="overview-right">
+    <div class="visualization-canvas">
+      <svg id="project-visualization" data-name="project-visualization" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240">
+        <g>
+          <circle class="issue-count" cx="108" cy="156" r="60" />
+          <text class="issue-count-value" x="108" y="164">{{storyCount}}</text>
+          <text class="issue-count-label" x="108" y="178">STORIES</text>
+        </g>
+        <g>
+          <circle class="issue-count" cx="372" cy="156" r="60" />
+          <text class="issue-count-value" x="372" y="164">{{bugCount}}</text>
+          <text class="issue-count-label" x="372" y="178">BUGS</text>
+        </g>
+        <g>
+          <circle class="epic-underlay" cx="240" cy="120" r="100" />
+          <circle class="epic-count" cx="240" cy="120" r="96" />
+          <text class="epic-count-value" x="240" y="136">{{epicCount}}</text>
+          <text class="epic-count-label" x="240" y="160">EPICS</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>

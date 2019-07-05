@@ -1,0 +1,23 @@
+<div class="theme-switch-toggle">
+  <div class="light-theme-button" (click)="setTheme(true)">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <title>Light</title>
+      <path class="icon" [class.sun-light-state]="lightTheme" [class.sun-dark-state]="!lightTheme" d="M16.5,12A4.5,4.5,0,1,1,12,7.5,4.49,4.49,0,0,1,16.5,12ZM12.3,6.75V4.5a.3.3,0,1,0-.6,0V6.75a.3.3,0,0,0,.6,0Zm0,12.75V17.25a.3.3,0,0,0-.6,0V19.5a.3.3,0,0,0,.6,0ZM7.05,12a.29.29,0,0,0-.3-.3H4.5a.3.3,0,0,0,0,.6H6.75A.29.29,0,0,0,7.05,12ZM19.8,12a.29.29,0,0,0-.3-.3H17.25a.3.3,0,0,0,0,.6H19.5A.29.29,0,0,0,19.8,12ZM8.5,8.5a.29.29,0,0,0,0-.42L6.91,6.48a.3.3,0,0,0-.43.43L8.08,8.5a.27.27,0,0,0,.21.09A.3.3,0,0,0,8.5,8.5Zm9,9a.32.32,0,0,0,0-.43l-1.6-1.59a.3.3,0,0,0-.42.42l1.59,1.6a.34.34,0,0,0,.21.08A.35.35,0,0,0,17.52,17.52Zm-10.61,0,1.59-1.6a.3.3,0,0,0-.42-.42l-1.6,1.59a.32.32,0,0,0,0,.43.35.35,0,0,0,.22.08A.34.34,0,0,0,6.91,17.52Zm9-9,1.6-1.59a.3.3,0,0,0-.43-.43L15.5,8.08a.29.29,0,0,0,0,.42.3.3,0,0,0,.21.09A.27.27,0,0,0,15.92,8.5Z" />
+    </svg>
+  </div>
+  <div class="toggle" (click)="onClick()">
+    <svg id="Toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 24" >
+    <title>Toggle</title>
+      <g id="Circle">
+        <circle class="circle" [class.circle-light-state]="lightTheme" [class.circle-dark-state]="!lightTheme" cx="12" cy="12" r="8" />
+      </g>
+    </svg>
+  </div>
+  <div class="dark-theme-button" (click)="setTheme(false)">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <title>Dark</title>
+      <path class="icon" [class.moon-light-state]="lightTheme" [class.moon-dark-state]="!lightTheme" d="M9.9,6a5.3,5.3,0,0,0-.57,0A6,6,0,0,1,7.67,17.57,5.9,5.9,0,0,0,9.9,18a6,6,0,0,0,0-12Z" />
+    </svg>
+  </div>
+</div>
+
